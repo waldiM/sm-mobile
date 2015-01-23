@@ -84,8 +84,8 @@ article.portfolio .selectPortfolio select{
     font-size:0.9em;
 }
 .noteRead .date{
-    color:#444;
-    font-size:0.85em;
+    color:#666;
+    font-size:0.8em;
 }
 .login .loginBtn{
     text-align:center;
