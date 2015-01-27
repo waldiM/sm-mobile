@@ -7,7 +7,6 @@
     <author email="waldemar.matuszewski@swiss-metrics.com" href="https://swiss-metrics.com">SwissMetrics Team</author>
     <content src="index.html" />
     <access origin="*" />
-    <gap:platform name="android" />
     <icon src="icon.png" />
     <gap:splash src="icon.png" />
 </widget>

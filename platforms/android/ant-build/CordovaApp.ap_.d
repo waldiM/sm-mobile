@@ -59,7 +59,8 @@
 /home/waldek/Projects/mobile/swissApp/platforms/android/assets/www/partials/home.html \
 /home/waldek/Projects/mobile/swissApp/platforms/android/assets/www/partials/notesRead.html \
 /home/waldek/Projects/mobile/swissApp/platforms/android/assets/www/partials/portfolio.html \
-/home/waldek/Projects/mobile/swissApp/platforms/android/assets/www/img/icon-120.png \
+/home/waldek/Projects/mobile/swissApp/platforms/android/assets/www/partials/addNote.html \
+/home/waldek/Projects/mobile/swissApp/platforms/android/assets/www/img/icon.png \
 /home/waldek/Projects/mobile/swissApp/platforms/android/assets/www/img/logo.png \
 /home/waldek/Projects/mobile/swissApp/platforms/android/assets/www/img/logo-white.png \
 /home/waldek/Projects/mobile/swissApp/platforms/android/assets/www/img/ajax-loader.gif \

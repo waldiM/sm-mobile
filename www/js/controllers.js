@@ -69,12 +69,14 @@ swissCntls.controller('portfolioController', ['$scope', '$location', 'REST', fun
 //Notes controller - read notes
 swissCntls.controller('notesReadController', ['$scope', '$location', '$routeParams', 'REST', function($scope, $location, $routeParams, REST) {
 
-    $scope.notes = [];
+    $scope.notes = {};
+    $scope.company = {};
     $scope.loading = true;    
 
     REST.Notes().get({companyId: $routeParams.companyId, companyKind: $routeParams.companyKind}, function(ret) {
         if(ret.status == 'ok'){
             $scope.notes = ret.notes;
+            $scope.company = ret.company;
             $scope.loading = false;
         }
         else{
@@ -92,6 +94,56 @@ swissCntls.controller('notesReadController', ['$scope', '$location', '$routePara
         d.setHours(hStr[0]);
         d.setMinutes(hStr[1]);
         return d.getTime();
+    }
+
+}]);
+
+//Add new note
+swissCntls.controller('addNoteController', ['$scope', '$routeParams', 'REST', function($scope, $routeParams, REST) { 
+
+    $scope.saveOk = false;
+    $scope.loading = true;
+    $scope.addPriority = 3;
+    $scope.company = {};
+
+    //get company info
+    REST.CompanyShort().get({companyId: $routeParams.companyId, companyKind: $routeParams.companyKind}, function(ret) {
+        if(ret.status == 'ok'){
+            $scope.company = ret.company;
+            $scope.loading = false;
+        }
+        else{
+            if(ret.logged == 'fail'){
+                $location.path('home');
+            }
+        }
+    });
+
+    //save note
+    $scope.saveNoteAction = function(){
+        if(!$scope.addSubject){
+            $scope.saveError = 'Enter subject.';
+        }
+        else if(!$scope.addText){
+            $scope.saveError = 'Enter message.';
+        }
+        else{
+            REST.AddNote().save({
+                companyId: $routeParams.companyId, companyKind: $routeParams.companyKind,
+                subject: $scope.addSubject, note: $scope.addText, traffic: $scope.addPriority}, function(ret) {
+                if(ret.status == 'ok'){
+                    $scope.saveOk = true;
+                    $scope.loading = false;
+                    $scope.errorMessage = 'Your note has been added.';
+                }
+                else{
+                    $scope.saveOk = true;
+                    $scope.errorMessage = 'An error occurred, please try again.';
+                }
+            });
+
+            
+        }
     }
 
 }]);

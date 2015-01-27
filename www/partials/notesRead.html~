@@ -1,11 +1,12 @@
 <article class="portfolio noteRead">
     
+    <div class="navTitle"><span ng-show="!loading">{{company.companyName}} &raquo; </span> Notes</div>
+
     <div class="loading" ng-show="loading"></div>
 
     <div class="errorMessage" ng-if="notes.length == 0 && !loading">
-        There are no notes for this company.<br><br>
-        <a class="btn btn-primary" href="#home">Add note</a>
-    </div>     
+        There are no notes for this company.
+    </div>         
 
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" ng-repeat="note in notes">
       <div class="panel panel-default">
@@ -28,5 +29,7 @@
         </div>
       </div>
     </div>
+    
+    <a class="btn btn-primary btnAddNote" href="#add-note/{{company.companyId}}/{{company.companyKind}}" ng-show="!loading">Add note</a>
 
 </article>

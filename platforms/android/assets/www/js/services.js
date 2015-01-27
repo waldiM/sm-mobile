@@ -17,23 +17,37 @@ swissServices.factory('REST', ['$resource', 'API_SERVER', 'Auth', function($reso
                  get: {method:'GET', params:{portfolioId: null}, headers: { 'Accesstoken': token.hash } }
             });
         },
+        // get short info about company
+        CompanyShort: function(){
+            var token = Auth.get();
+            return $resource(API_SERVER + 'companyShort/:companyId/:companyKind', {companyId: '@companyId', companyKind: '@companykind'}, {
+                 get: {method:'GET', params:{}, headers: { 'Accesstoken': token.hash } }
+            });
+        },
         // get notes
         Notes: function(){
             var token = Auth.get();
             return $resource(API_SERVER + 'notes/:companyId/:companyKind', {}, {
                  get: {method:'GET', params:{companyId: null, companyKind: null}, headers: { 'Accesstoken': token.hash } }
             });
+        },
+        // save note
+        AddNote: function(){
+            var token = Auth.get();
+            return $resource(API_SERVER + 'addNote/:companyId/:companyKind', {companyId: '@companyId', companyKind:'@companyKind'}, {
+                 save: {method:'POST', params:{subject: null, note: null, priority: null}, headers: { 'Accesstoken': token.hash } }
+            });
         }
     }
 }]);
 
 // save/get auth cookie
-swissServices.factory('Auth', ['$cookies', 'currentToken', function($cookies, currentToken){
+swissServices.factory('Auth', ['currentToken', function(currentToken){
 
     var ret = {};
 
     ret.put = function(value) {
-        $cookies.smAppToken = value;
+        localStorage.setItem('smAppToken', value);
         currentToken.hash = value;
         return currentToken.hash;
     }
@@ -44,14 +58,15 @@ swissServices.factory('Auth', ['$cookies', 'currentToken', function($cookies, cu
             token = null;
         }
         else{
-            token = currentToken.hash ? currentToken.hash : ($cookies.smAppToken ? $cookies.smAppToken : null);       
+            var smAppToken = localStorage.getItem('smAppToken');
+            token = currentToken.hash ? currentToken.hash : smAppToken;       
         }
         return {hash: token};
     }
 
     ret.logout = function(){
         currentToken.hash = 'logout';
-        delete $cookies['smAppToken'];
+        localStorage.setItem('smAppToken', null);
         return currentToken.hash;
     }
 

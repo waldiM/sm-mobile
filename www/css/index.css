@@ -19,6 +19,10 @@ main{
     text-align: center;
     width: 100%;
 }
+.navTitle{
+    padding:0 0 10px;
+    color:#555;
+}
 nav.navbar {
     background-color: #222a30 !important;
     border-bottom: 2px solid #ed1d25;
@@ -59,7 +63,8 @@ article.portfolio .selectPortfolio span{
     color:#555;
 }
 article.portfolio .selectPortfolio select{
-    font-weight: bold;
+    font-size: 1.2em;
+    padding: 5px 12px;
 }
 .noteRead .light {
     border: 2px solid #e6e6e6;
@@ -87,6 +92,9 @@ article.portfolio .selectPortfolio select{
     color:#666;
     font-size:0.8em;
 }
+.noteRead .btnAddNote{
+    text-align:center;
+}
 .login .loginBtn{
     text-align:center;
 }
@@ -94,3 +102,21 @@ article.home .infoHome{
     background:url(../img/logo.png) no-repeat 50% 50%;
     width:100%;
 }
+.addNote .radioInputs input[type="radio"] {
+    height: auto;
+    margin: -3px 5px 0 0;
+}
+.addNote .radioInputs label {
+    font-size: 14px;
+    margin: 0 10px 0 2px;
+}
+.addNote .radioInputs label.green {
+    color: #0e8e00;
+}
+.addNote .radioInputs label.yellow {
+    color: #d8d80a;
+}
+.addNote .radioInputs label.red {
+    color: #e71f28;
+}
+

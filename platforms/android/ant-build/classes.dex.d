@@ -1,4 +1,11 @@
 /home/waldek/Projects/mobile/swissApp/platforms/android/ant-build/classes.dex : \
+/home/waldek/Projects/mobile/swissApp/platforms/android/ant-build/classes/com/swiss_metrics/rwd/R$attr.class \
+/home/waldek/Projects/mobile/swissApp/platforms/android/ant-build/classes/com/swiss_metrics/rwd/R$drawable.class \
+/home/waldek/Projects/mobile/swissApp/platforms/android/ant-build/classes/com/swiss_metrics/rwd/CordovaApp.class \
+/home/waldek/Projects/mobile/swissApp/platforms/android/ant-build/classes/com/swiss_metrics/rwd/R.class \
+/home/waldek/Projects/mobile/swissApp/platforms/android/ant-build/classes/com/swiss_metrics/rwd/R$string.class \
+/home/waldek/Projects/mobile/swissApp/platforms/android/ant-build/classes/com/swiss_metrics/rwd/R$xml.class \
+/home/waldek/Projects/mobile/swissApp/platforms/android/ant-build/classes/com/swiss_metrics/rwd/BuildConfig.class \
 /home/waldek/Projects/mobile/swissApp/platforms/android/ant-build/classes/io/cordova/hellocordova/R$attr.class \
 /home/waldek/Projects/mobile/swissApp/platforms/android/ant-build/classes/io/cordova/hellocordova/R$drawable.class \
 /home/waldek/Projects/mobile/swissApp/platforms/android/ant-build/classes/io/cordova/hellocordova/CordovaApp.class \

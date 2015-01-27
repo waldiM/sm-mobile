@@ -10,7 +10,9 @@
         <span>Portfolio: </span>
         <select
             ng-model="select.selected" 
-            ng-options="portfolio.portfolio_id as portfolio.portfolio_title for portfolio in portfolios">
+            ng-options="portfolio.portfolio_id as portfolio.portfolio_title for portfolio in portfolios"
+            ng-change="changePortfolio(select.selected)"
+        >
         </select>
     </div>
 
@@ -28,7 +30,7 @@
           <div class="panel-body">
             <a class="btn btn-primary btn-sm" href="#home">Company info</a>
             <a class="btn btn-primary btn-sm" href="#notes/{{company.cmp_id}}/{{company.kind}}">Read notes</a>
-            <a class="btn btn-primary btn-sm" href="#home">Add note</a>
+            <a class="btn btn-primary btn-sm" href="#add-note/{{company.cmp_id}}/{{company.kind}}">Add note</a>
           </div>
         </div>
       </div>
