@@ -147,3 +147,24 @@ swissCntls.controller('addNoteController', ['$scope', '$routeParams', 'REST', fu
     }
 
 }]);
+
+//Company controller - detal info
+swissCntls.controller('companyController', ['$scope', '$location', '$routeParams', 'REST', function($scope, $location, $routeParams, REST) {
+
+    $scope.ret = {};
+    $scope.loading = true;    
+
+    REST.Company().get({companyId: $routeParams.companyId, companyKind: $routeParams.companyKind}, function(ret) {
+        if(ret.status == 'ok'){
+            $scope.ret = ret.company;
+            $scope.tickers = ret.ticker;
+            $scope.loading = false;
+        }
+        else{
+            if(ret.logged == 'fail'){
+                $location.path('home');
+            }
+        }
+    });
+
+}]);

@@ -1,6 +1,9 @@
 <article class="portfolio addNote">  
     
-    <div class="navTitle"><span ng-show="!loading">{{company.companyName}} &raquo; </span>Add Note</div>
+    <div class="navTitle">
+        <span ng-show="!loading">{{company.companyName}} &raquo; </span>
+        <a href="#notes/{{company.companyId}}/{{company.companyKind}}">Notes</a> &raquo; Add Note
+    </div>
 
     <div class="errorMessage" ng-show="saveOk">
         {{errorMessage}}<br><br>

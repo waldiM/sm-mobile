@@ -1,7 +1,7 @@
 <article class="portfolio addNote">  
     
     <div class="navTitle">
-        <span ng-show="!loading">{{company.companyName}} &raquo; </span>
+        <span ng-show="!loading"><a href="#company/{{company.companyId}}/{{company.companyKind}}">{{company.companyName}}</a> &raquo; </span>
         <a href="#notes/{{company.companyId}}/{{company.companyKind}}">Notes</a> &raquo; Add Note
     </div>
 

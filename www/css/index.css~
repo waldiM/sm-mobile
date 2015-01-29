@@ -22,6 +22,7 @@ main{
 .navTitle{
     padding:0 0 10px;
     color:#555;
+    font-size: 1.4em;
 }
 nav.navbar {
     background-color: #222a30 !important;
@@ -92,6 +93,9 @@ article.portfolio .selectPortfolio select{
     color:#666;
     font-size:0.8em;
 }
+.btnAddNoteCenter{
+    text-align:center;
+}
 .login .loginBtn{
     text-align:center;
 }
@@ -115,5 +119,27 @@ article.home .infoHome{
 }
 .addNote .radioInputs label.red {
     color: #e71f28;
+}
+.company .infoRow{
+    padding:1px 0;
+}
+.company .infoRow span{
+    font-weight:bold;
+    width:100px;
+    color:#555;
+    display: inline-block;
+}
+.company .glyphicon{
+    font-size: 1.2em;
+    padding: 0 10px 0 0;
+    color:#888;
+}
+.company .infoRow ul{
+    margin:0;
+    padding:0;
+     display: inline;
+}
+.company .infoRow li{
+    display: inline-block;
 }
 

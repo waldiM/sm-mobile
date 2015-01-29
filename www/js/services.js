@@ -24,6 +24,13 @@ swissServices.factory('REST', ['$resource', 'API_SERVER', 'Auth', function($reso
                  get: {method:'GET', params:{}, headers: { 'Accesstoken': token.hash } }
             });
         },
+        // get full info about company
+        Company: function(){
+            var token = Auth.get();
+            return $resource(API_SERVER + 'company/:companyId/:companyKind', {companyId: '@companyId', companyKind: '@companykind'}, {
+                 get: {method:'GET', params:{}, headers: { 'Accesstoken': token.hash } }
+            });
+        },
         // get notes
         Notes: function(){
             var token = Auth.get();

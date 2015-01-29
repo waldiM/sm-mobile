@@ -18,6 +18,9 @@ swissApp.config(['$routeProvider', function($routeProvider) {
         }).when('/notes/:companyId/:companyKind', {
             templateUrl: 'partials/notesRead.html',
             controller: 'notesReadController'
+        }).when('/company/:companyId/:companyKind', {
+            templateUrl: 'partials/company.html',
+            controller: 'companyController'
         }).otherwise({
             redirectTo: '/home'
         });

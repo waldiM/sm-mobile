@@ -30,6 +30,8 @@
       </div>
     </div>
     
-    <a class="btn btn-primary btnAddNote" href="#add-note/{{company.companyId}}/{{company.companyKind}}" ng-show="!loading">Add note</a>
+    <div class="btnAddNoteCenter">
+        <a class="btn btn-primary" href="#add-note/{{company.companyId}}/{{company.companyKind}}" ng-show="!loading">Add note</a>
+    </div>
 
 </article>
